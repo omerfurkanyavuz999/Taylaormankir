@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talya Orman Kır Düğünü & Davet | Kepez, Antalya</title>
+  <meta name="description" content="Antalya Kepez Parkfuntastic içerisinde, çam ağaçları arasında su üstü nikah iskelesi ve 1.000 kişilik kapasitesiyle masalsı kır düğünü mekanı." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            forest: {
+              50: '#f3f7f4',
+              100: '#e1ece4',
+              200: '#c3d9ca',
+              600: '#2d5a3f',
+              700: '#214630',
+              800: '#183424',
+              900: '#102318',
+              950: '#09150e',
+            },
+            champagne: {
+              100: '#fbf6e9',
+              200: '#f4e7c5',
+              300: '#e8cf90',
+              400: '#d8b461',
+              500: '#c49a3f',
+              600: '#a37b29',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Özel kaydırma çubuğu ve zarif geçişler */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #102318; }
+    ::-webkit-scrollbar-thumb { background: #c49a3f; border-radius: 4px; }
+
+    /* Range Slider Özelleştirmesi */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(196, 154, 63, 0.28);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #c49a3f;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      margin-top: -8px;
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+
+    /* Fade-Up Animasyonları */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Akordeon geçişi */
+    .faq-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.32s ease;
+    }
+    .faq-item.open .faq-content {
+      grid-template-rows: 1fr;
+    }
+    .faq-inner {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-[#faf8f4] text-stone-800 dark:bg-forest-950 dark:text-stone-100 font-sans antialiased transition-colors duration-300 pb-16 sm:pb-0 selection:bg-champagne-400 selection:text-forest-950">
+
+  <!-- Üst Navigasyon -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-forest-950/65 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-champagne-400/60 flex items-center justify-center text-champagne-300 font-serif text-xl font-bold group-hover:bg-champagne-400 group-hover:text-forest-950 transition">
+          T
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white leading-none">
+            TALYA ORMAN
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.28em] text-champagne-300 font-medium mt-1">
+            Kır Düğünü & Davet
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-200">
+        <a href="#galeri" class="hover:text-champagne-300 transition">Mekan Galerisi</a>
+        <a href="#ayricaliklar" class="hover:text-champagne-300 transition">Hizmetlerimiz</a>
+        <a href="#yorumlar" class="hover:text-champagne-300 transition">Çiftlerimiz</a>
+        <a href="#sss" class="hover:text-champagne-300 transition">Sık Sorulanlar</a>
+        <a href="#konum" class="hover:text-champagne-300 transition">İletişim</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" type="button" aria-label="Tema Değiştir" class="p-2.5 rounded-full border border-white/20 text-stone-200 hover:border-champagne-400 hover:text-champagne-300 transition">
+          <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <a href="#hesaplayici" class="bg-champagne-500 hover:bg-champagne-400 text-forest-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition shadow-lg shadow-champagne-500/20">
+          Teklif Oluştur
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. TAM EKRAN HERO ALANI -->
+  <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-8 overflow-hidden bg-forest-950">
+    <!-- Arka Plan Görseli & Degrade Katmanları -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img
+        src="https://i.dugun.com/gallery/77229/preview_orman-kir-dugunu_GfgDMbIb.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/102318/e8cf90?text=Talya+Orman+Kir+Dugunu';"
+        alt="Talya Orman Kır Düğünü - Çam ağaçları altında kır bahçesi atmosferi"
+        class="w-full h-full object-cover object-top scale-110"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-forest-950/80 via-forest-950/65 to-forest-950"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(9,21,14,0.65)_100%)]"></div>
+    </div>
+
+    <!-- Hero İçerik -->
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <!-- Konum ve Konsept Rozeti -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-champagne-300/30 text-champagne-200 text-xs font-medium tracking-wide mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-champagne-400"></span>
+        <span>KEPEZ • PARKFUNTASTIC İÇİ</span>
+        <span class="text-white/40">|</span>
+        <span>ANTALYA</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+        Çam Ağaçlarının Gölgesinde, <br class="hidden sm:block" />
+        <span class="italic font-normal text-champagne-300">Peri Işıklarıyla</span> Masalsı Bir Başlangıç
+      </h1>
+
+      <p class="text-base sm:text-xl text-stone-200/90 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+        Yaz akşamlarında Antalya’nın sıcağından uzak serin orman atmosferi, su üzerindeki beyaz nikah iskelesi ve 1.000 kişiye kadar davet kapasitesiyle hayalinizdeki düğünü gerçeğe dönüştürüyoruz.
+      </p>
+
+      <!-- CTA Butonları -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+        <a href="#hesaplayici" class="w-full sm:w-auto px-8 py-4 rounded-full bg-champagne-500 hover:bg-champagne-400 text-forest-950 font-bold text-sm tracking-wide transition shadow-xl shadow-champagne-500/20 flex items-center justify-center gap-2">
+          <span>Davetli Sayına Göre Teklif Al</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="#galeri" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white font-medium text-sm tracking-wide transition">
+          Mekan Atmosferini İncele
+        </a>
+      </div>
+
+      <!-- Öne Çıkan Özellik Rozetleri (Cam Efektli Şerit) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
+        <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-left">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-champagne-300">1.000 Kişi</div>
+          <div class="text-xs text-stone-300 mt-0.5">Geniş Kır Bahçesi Kapasitesi</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-left">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-champagne-300">Su İskelesi</div>
+          <div class="text-xs text-stone-300 mt-0.5">Özel Açık Hava Nikah Alanı</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-left">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-champagne-300">Kapalı Salon</div>
+          <div class="text-xs text-stone-300 mt-0.5">Yağışa Karşı %100 Yedek Plan</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-left">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-champagne-300">Her Şey Dahil</div>
+          <div class="text-xs text-stone-300 mt-0.5">Orkestra, Fotoğraf & Kuaför</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MEKAN GALERİSİ & ATMOSFER (BENTO GRID + LIGHTBOX) -->
+  <section id="galeri" class="py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-champagne-600 dark:text-champagne-400">Gerçek Mekan Kareleri</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900 dark:text-white mt-2">
+          Mekan Galerisi & Atmosfer
+        </h2>
+      </div>
+      <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 max-w-md">
+        Kepez Parkfuntastic içerisindeki gerçek bahçemizden kareleri inceleyin. Fotoğraflara tıklayarak tam ekran görüntüleyebilirsiniz.
+      </p>
+    </div>
+
+    <!-- Bento Grid Düzeni (Gerçek Mekan Fotoğrafları) -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 reveal">
+      <!-- Sahne 1: Büyük Ana Fotoğraf (Çam Ağaçları Altında Kır Bahçesi) -->
+      <div onclick="openLightbox(0)" class="md:col-span-7 md:row-span-2 group relative rounded-3xl overflow-hidden cursor-pointer h-80 md:h-[520px] shadow-lg">
+        <img
+          src="https://i.dugun.com/gallery/77229/preview_orman-kir-dugunu_GfgDMbIb.jpg"
+          onerror="this.onerror=null;this.src='https://placehold.co/1200x800/183424/e8cf90?text=Cam+Agaclari+Altinda+Kir+Bahcesi';"
+          alt="Çam Ağaçları Altında Kır Bahçesi"
+          class="w-full h-full object-cover object-top scale-105 transition duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+        </div>
+        <div class="absolute bottom-6 left-6 right-6 text-white">
+          <span class="text-xs uppercase tracking-widest text-champagne-300 font-semibold">1.000 Kişilik Kapasite</span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold mt-1">Çam Ağaçları Altında Kır Bahçesi</h3>
+          <p class="text-xs sm:text-sm text-stone-200/90 mt-1">Yüksek çam ağaçlarının gölgesinde, 1.000 kişiye kadar konforlu davet ve ziyafet düzeni.</p>
+        </div>
+      </div>
+
+      <!-- Sahne 2: Peri Işıklı Nikah & Seremoni Alanı -->
+      <div onclick="openLightbox(1)" class="md:col-span-5 group relative rounded-3xl overflow-hidden cursor-pointer h-64 md:h-[250px] shadow-lg">
+        <img
+          src="https://i.dugun.com/articles/body/orman-kir-dugunu-nk23cql1.jpg"
+          onerror="this.onerror=null;this.src='https://placehold.co/800x500/214630/e8cf90?text=Peri+Isikli+Nikah+Alani';"
+          alt="Peri Işıklı Nikah ve Seremoni Alanı"
+          class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <span class="text-[11px] uppercase tracking-widest text-champagne-300 font-semibold">Akşam Büyüsü</span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold">Peri Işıklı Nikah & Seremoni Alanı</h3>
+          <p class="text-xs text-stone-200/85 mt-0.5">Çiçek kemeri ve sıcak ışıklar altında romantik nikah masası.</p>
+        </div>
+      </div>
+
+      <!-- Sahne 3: Süs Havuzu & Orman Atmosferi -->
+      <div onclick="openLightbox(2)" class="md:col-span-5 group relative rounded-3xl overflow-hidden cursor-pointer h-64 md:h-[250px] shadow-lg">
+        <img
+          src="https://i.dugun.com/articles/body/orman-kir-dugunu-iee68klb.jpg"
+          onerror="this.onerror=null;this.src='https://placehold.co/800x500/2d5a3f/e8cf90?text=Sus+Havuzu+ve+Orman+Atmosferi';"
+          alt="Süs Havuzu ve Orman Atmosferi"
+          class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <span class="text-[11px] uppercase tracking-widest text-champagne-300 font-semibold">Dış Çekim & İskele</span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold">Süs Havuzu & Orman Atmosferi</h3>
+          <p class="text-xs text-stone-200/85 mt-0.5">Turkuaz su yansımaları ve çiçek sütunlarıyla benzersiz fotoğraf platosu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ayrıcalıklar / Hizmetler -->
+  <section id="ayricaliklar" class="py-20 px-4 sm:px-8 bg-forest-900 text-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-champagne-300">Tek Çatı Altında</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4">
+          Düğün Gününüze Değer Katan Ayrıcalıklar
+        </h2>
+        <p class="text-sm sm:text-base text-stone-300 font-light">
+          Dışarıda onlarca farklı tedarikçiyle uğraşmanıza gerek kalmadan, hazırlıktan gecenin son dansına kadar tüm ekibimiz yanınızda.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+        <div class="p-7 rounded-3xl bg-forest-800/70 border border-white/10 hover:border-champagne-400/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-champagne-400/15 text-champagne-300 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-2">Orman İçi Serin Klima Etkisi</h3>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Kepez Parkfuntastic içerisindeki yoğun çam dokusu sayesinde Antalya’nın en sıcak yaz akşamlarında dahi doğal ve ferah bir esinti sunar.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-forest-800/70 border border-white/10 hover:border-champagne-400/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-champagne-400/15 text-champagne-300 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-2">Hava Koşulu Güvencesi</h3>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Bahar ve yaz yağmurlarına karşı aynı anda hazır tutulan şık kapalı salonumuz sayesinde organizasyonunuz hiçbir hava şartından etkilenmez.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-forest-800/70 border border-white/10 hover:border-champagne-400/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-champagne-400/15 text-champagne-300 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-2">Canlı Orkestra & Ses-Işık</h3>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Romantik ilk dansınızdan gecenin sonuna kadar süren eğlenceye kadar geniş repertuvarlı orkestra ve profesyonel sahne ışıkları.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-forest-800/70 border border-white/10 hover:border-champagne-400/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-champagne-400/15 text-champagne-300 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-2">Fotoğraf, Video & Kuaför</h3>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Dış çekim platosu niteliğindeki orman alanımızda profesyonel fotoğraf-video ekibimiz ve gelin saçı-makyaj hizmetimiz paketlere dahildir.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-forest-800/70 border border-white/10 hover:border-champagne-400/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-champagne-400/15 text-champagne-300 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-2">Özel Gelin & Damat Odası</h3>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Tören öncesi dinlenebileceğiniz, hazırlıklarınızı konforla tamamlayabileceğiniz klimalı ve özel ikramlı gelin hazırlık süiti.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-forest-800/70 border border-white/10 hover:border-champagne-400/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-champagne-400/15 text-champagne-300 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-2">Merkezi Ulaşım & Otopark</h3>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Antalya Bulvarı üzerindeki kolay ulaşım hattı ve yüzlerce araçlık ücretsiz otopark alanıyla şehir içi ve dışı misafirleriniz için tam konfor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. İNTERAKTİF TEKLİF & TARİH HESAPLAYICI -->
+  <section id="hesaplayici" class="py-20 sm:py-28 px-4 sm:px-8 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <span class="text-xs font-bold uppercase tracking-[0.25em] text-champagne-600 dark:text-champagne-400">Hızlı Planlama</span>
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900 dark:text-white mt-2 mb-3">
+        İnteraktif Teklif & Tarih Hesaplayıcı
+      </h2>
+      <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300">
+        Davetli sayınızı sürgüyle belirleyin, ikram ve organizasyon seçiminizi yapın; size özel hazırlanan özeti tek tıkla WhatsApp hattımıza gönderin.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-stretch reveal">
+      <!-- Sol: Seçim Paneli -->
+      <div class="lg:col-span-7 p-6 sm:p-9 rounded-3xl bg-white dark:bg-forest-900 border border-stone-200 dark:border-white/10 shadow-xl space-y-6">
+        <!-- Organizasyon Türü -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2.5">1. Organizasyon Türü</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="eventTypeGroup">
+            <button type="button" data-value="Kır Düğünü" class="option-btn active py-3 px-3 rounded-xl border text-xs sm:text-sm font-semibold transition border-forest-700 bg-forest-700 text-white dark:border-champagne-400 dark:bg-champagne-400 dark:text-forest-950">
+              Kır Düğünü
+            </button>
+            <button type="button" data-value="Söz & Nişan" class="option-btn py-3 px-3 rounded-xl border border-stone-200 dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-forest-600 transition">
+              Söz & Nişan
+            </button>
+            <button type="button" data-value="Kına Gecesi" class="option-btn py-3 px-3 rounded-xl border border-stone-200 dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-forest-600 transition">
+              Kına Gecesi
+            </button>
+            <button type="button" data-value="Sünnet & Davet" class="option-btn py-3 px-3 rounded-xl border border-stone-200 dark:border-white/15 text-xs sm:text-sm font-semibold hover:border-forest-600 transition">
+              Sünnet & Davet
+            </button>
+          </div>
+        </div>
+
+        <!-- Davetli Sayısı Range Slider -->
+        <div class="p-5 rounded-2xl bg-stone-50 dark:bg-forest-950/70 border border-stone-200/80 dark:border-white/10">
+          <div class="flex items-center justify-between mb-3">
+            <label for="guestSlider" class="text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">2. Tahmini Davetli Sayısı</label>
+            <div class="px-3.5 py-1 rounded-full bg-champagne-500/15 text-champagne-600 dark:text-champagne-300 font-serif text-xl font-bold">
+              <span id="guestValueDisplay">350</span> Kişi
+            </div>
+          </div>
+          <input type="range" id="guestSlider" min="100" max="1000" step="50" value="350" class="w-full" />
+          <div class="flex justify-between text-[11px] text-stone-400 mt-2 font-medium">
+            <span>100 Kişi</span>
+            <span>400 Kişi</span>
+            <span>700 Kişi</span>
+            <span>1.000 Kişi</span>
+          </div>
+        </div>
+
+        <!-- İkram Tercihi -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2.5">3. İkram & Menü Tercihi</label>
+          <div class="grid sm:grid-cols-3 gap-3" id="menuGroup">
+            <button type="button" data-value="Kuru Pasta & Meşrubat" data-desc="Yaş pasta, kuru pasta çeşitleri ve sınırsız soğuk meşrubat" class="menu-btn active p-3.5 rounded-xl border text-left transition border-forest-700 bg-forest-50 dark:border-champagne-400 dark:bg-forest-800">
+              <div class="text-xs sm:text-sm font-bold text-stone-900 dark:text-white">Kuru Pasta & Meşrubat</div>
+              <div class="text-[11px] text-stone-500 dark:text-stone-300 mt-0.5">Klasik düğün ikramı</div>
+            </button>
+            <button type="button" data-value="Kokteyl Menü" data-desc="Ara sıcaklar, kanepe tabakları, yaş pasta ve meşrubat" class="menu-btn p-3.5 rounded-xl border border-stone-200 dark:border-white/15 text-left hover:border-forest-600 transition">
+              <div class="text-xs sm:text-sm font-bold text-stone-900 dark:text-white">Kokteyl Menü</div>
+              <div class="text-[11px] text-stone-500 dark:text-stone-300 mt-0.5">Zengin atıştırmalık sunum</div>
+            </button>
+            <button type="button" data-value="Yemekli Ziyafet Menü" data-desc="Ordövr tabağı, ara sıcak, ana yemek seçimi ve düğün pastası" class="menu-btn p-3.5 rounded-xl border border-stone-200 dark:border-white/15 text-left hover:border-forest-600 transition">
+              <div class="text-xs sm:text-sm font-bold text-stone-900 dark:text-white">Yemekli Menü</div>
+              <div class="text-[11px] text-stone-500 dark:text-stone-300 mt-0.5">Kırmızı / Beyaz et ziyafeti</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- İsim ve Tarih -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="coupleName" class="block text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1.5">4. İsimleriniz</label>
+            <input type="text" id="coupleName" placeholder="Örn: Selin & Burak" class="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-forest-950 border border-stone-300 dark:border-white/15 text-sm focus:outline-none focus:border-champagne-500" />
+          </div>
+          <div>
+            <label for="weddingDate" class="block text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1.5">5. Planlanan Tarih / Dönem</label>
+            <input type="text" id="weddingDate" placeholder="Örn: 2027 Temmuz / 24.08.2027" class="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-forest-950 border border-stone-300 dark:border-white/15 text-sm focus:outline-none focus:border-champagne-500" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Sağ: Canlı Özet Kartı & WhatsApp Gönderimi -->
+      <div class="lg:col-span-5 p-7 sm:p-9 rounded-3xl bg-forest-900 text-white border border-champagne-400/30 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-champagne-400/10 blur-2xl pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between border-b border-white/15 pb-4 mb-6">
+            <div>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-300 font-semibold">Canlı Teklif Özeti</span>
+              <h3 class="font-serif text-2xl font-bold mt-0.5">Talya Orman Davet Planı</h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">Müsaitlik Açık</span>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <div class="flex justify-between py-2 border-b border-white/10">
+              <span class="text-stone-400">Organizasyon:</span>
+              <span id="summaryEvent" class="font-semibold text-white">Kır Düğünü</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-white/10">
+              <span class="text-stone-400">Davetli Sayısı:</span>
+              <span id="summaryGuests" class="font-semibold text-champagne-300">350 Kişi</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-white/10">
+              <span class="text-stone-400">İkram Paketi:</span>
+              <span id="summaryMenu" class="font-semibold text-white">Kuru Pasta & Meşrubat</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-white/10">
+              <span class="text-stone-400">Önerilen Alan:</span>
+              <span id="summaryArea" class="font-semibold text-emerald-300">Ana Orman Bahçesi & İskele</span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-stone-400">Tarih Tercihi:</span>
+              <span id="summaryDate" class="font-semibold text-stone-200">Belirtilmedi</span>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-stone-300 leading-relaxed">
+            <strong class="text-champagne-300">Pakete Dahil Standartlar:</strong> Su üstü nikah iskelesi kullanımı, canlı orkestra, profesyonel fotoğraf-video çekimi, gelin saçı-makyaj ve kapalı salon yedek planı.
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <button type="button" id="sendWhatsappBtn" class="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-forest-950 font-bold text-sm transition shadow-lg shadow-[#25D366]/20 flex items-center justify-center gap-2.5">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+            <span>Bu Planla WhatsApp'tan Fiyat Al</span>
+          </button>
+          <p class="text-[11px] text-center text-stone-400 mt-2.5">
+            Mesajınız doğrudan <span class="text-stone-200 font-medium">0551 883 27 08</span> hattına yönlendirilir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ÇİFTLERİMİZ NE DEDİ? (MÜŞTERİ YORUMLARI) -->
+  <section id="yorumlar" class="py-20 px-4 sm:px-8 bg-champagne-100/60 dark:bg-forest-900/50 border-y border-stone-200/70 dark:border-white/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-champagne-600 dark:text-champagne-400">Gerçek Deneyimler</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900 dark:text-white mt-2">
+          Çiftlerimiz Ne Dedi?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+        <div class="p-7 rounded-3xl bg-white dark:bg-forest-900 border border-stone-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-champagne-500 text-sm mb-4">★★★★★</div>
+            <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed italic">
+              "Temmuz ortasında Antalya sıcağında misafirlerimiz bunalır mı diye çok endişelenmiştik ama çam ağaçlarının altı gerçekten püfür püfür esiyordu. Su üzerindeki nikah iskelesinde çekilen fotoğraflarımız masal gibi çıktı."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-sm text-stone-900 dark:text-white">Zeynep & Emre K.</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">450 Kişilik Kır Düğünü</div>
+            </div>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-forest-100 dark:bg-forest-800 text-forest-700 dark:text-emerald-300 font-medium">Doğrulanmış Çift</span>
+          </div>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-white dark:bg-forest-900 border border-stone-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-champagne-500 text-sm mb-4">★★★★★</div>
+            <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed italic">
+              "Düğün haftası yağmur ihtimali görünce çok panikledik ama mekanın kapalı salon yedek planı bizi inanılmaz rahatlattı. Neyse ki hava açtı ve peri ışıkları altında harika bir gece yaşadık. Orkestra ve ilgi kusursuzdu."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-sm text-stone-900 dark:text-white">Melis & Caner T.</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">Yemekli Düğün Organizasyonu</div>
+            </div>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-forest-100 dark:bg-forest-800 text-forest-700 dark:text-emerald-300 font-medium">Doğrulanmış Çift</span>
+          </div>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-white dark:bg-forest-900 border border-stone-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-champagne-500 text-sm mb-4">★★★★★</div>
+            <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed italic">
+              "Kuaför, dış çekim, orkestra ve ikramların tek pakette olması bizi büyük bir yükten kurtardı. Parkfuntastic içinde olduğu için şehir dışından gelen akrabalarımız bile kolayca buldu, otopark hiç sorun olmadı."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 dark:border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-sm text-stone-900 dark:text-white">Büşra & Hakan A.</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">600 Kişilik Tam Paket Düğün</div>
+            </div>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-forest-100 dark:bg-forest-800 text-forest-700 dark:text-emerald-300 font-medium">Doğrulanmış Çift</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIK SORULAN SORULAR (AKORDEON) -->
+  <section id="sss" class="py-20 sm:py-28 px-4 sm:px-8 max-w-4xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span class="text-xs font-bold uppercase tracking-[0.25em] text-champagne-600 dark:text-champagne-400">Merak Edilenler</span>
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900 dark:text-white mt-2">
+        Sık Sorulan Sorular
+      </h2>
+    </div>
+
+    <div class="space-y-3.5 reveal" id="faqContainer">
+      <div class="faq-item open rounded-2xl bg-white dark:bg-forest-900 border border-stone-200 dark:border-white/10 overflow-hidden">
+        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-stone-900 dark:text-white">
+          <span>Düğün günü yağmur yağarsa nasıl bir önlem alınıyor?</span>
+          <span class="faq-icon text-champagne-500 text-xl font-bold transition-transform duration-300 rotate-45">+</span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            <p class="px-6 pb-5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+              Talya Orman Kır Düğünü’nde hava muhalefetine karşı aynı şıklıkta dekore edilebilen kapalı salon yedek alanımız mevcuttur. Meteorolojik uyarı durumunda organizasyonunuz hiçbir aksama yaşamadan kapalı alanımıza alınır.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl bg-white dark:bg-forest-900 border border-stone-200 dark:border-white/10 overflow-hidden">
+        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-stone-900 dark:text-white">
+          <span>Otopark kapasitesi yeterli mi ve ulaşım nasıl sağlanıyor?</span>
+          <span class="faq-icon text-champagne-500 text-xl font-bold transition-transform duration-300">+</span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            <p class="px-6 pb-5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+              Mekanımız Kepez Fatih Mahallesi, Antalya Bulvarı üzerinde Parkfuntastic içerisinde yer almaktadır. Ana arter üzerinde olduğu için toplu taşıma ve özel araçla ulaşım çok kolaydır; misafirleriniz için geniş ve ücretsiz otopark alanı mevcuttur.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl bg-white dark:bg-forest-900 border border-stone-200 dark:border-white/10 overflow-hidden">
+        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-stone-900 dark:text-white">
+          <span>Dışarıdan fotoğrafçı veya organizasyon firması getirebilir miyiz?</span>
+          <span class="faq-icon text-champagne-500 text-xl font-bold transition-transform duration-300">+</span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            <p class="px-6 pb-5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+              Paketlerimizde profesyonel çekim ekibi, orkestra, süsleme ve kuaför hizmetleri her şey dahil olarak sunulmaktadır. Ancak özel konsept talepleriniz veya kendi çalışmak istediğiniz ekipler konusunda esnek çözümler sağlıyoruz.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl bg-white dark:bg-forest-900 border border-stone-200 dark:border-white/10 overflow-hidden">
+        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-stone-900 dark:text-white">
+          <span>Mekanı canlı görmek ve ön görüşme yapmak için randevu gerekli mi?</span>
+          <span class="faq-icon text-champagne-500 text-xl font-bold transition-transform duration-300">+</span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            <p class="px-6 pb-5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+              Düğün hazırlıkları sırasında size özel zaman ayırabilmemiz ve bahçemizi detaylı gezdirebilmemiz için 0551 883 27 08 numaralı hattımızdan veya WhatsApp üzerinden ön randevu oluşturmanızı öneririz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. KONUM VE İLETİŞİM (FOOTER) -->
+  <footer id="konum" class="bg-forest-950 text-stone-300 pt-16 pb-12 px-4 sm:px-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5 space-y-5">
+        <div class="inline-flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full border border-champagne-400/60 flex items-center justify-center text-champagne-300 font-serif text-xl font-bold">
+            T
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl font-bold text-white leading-none">TALYA ORMAN</h3>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-champagne-300">Kır Düğünü & Davet</span>
+          </div>
+        </div>
+
+        <p class="text-sm text-stone-400 leading-relaxed">
+          <strong class="text-white block mb-1">Adres:</strong>
+          Fatih Mah. Antalya Bulvarı, Parkfuntastic İçi No:410/62, Kepez / Antalya
+        </p>
+
+        <div class="flex flex-wrap gap-3 pt-1">
+          <a href="tel:+905518832708" class="px-6 py-3 rounded-full bg-champagne-500 hover:bg-champagne-400 text-forest-950 text-xs font-bold transition">
+            Ara: 0551 883 27 08
+          </a>
+          <a href="https://www.instagram.com/ormankirdugunu/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full border border-white/20 hover:border-champagne-400 text-white text-xs font-semibold transition">
+            Instagram: @ormankirdugunu
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-white/15 h-64 sm:h-72 shadow-2xl">
+        <iframe
+          title="Talya Orman Kır Düğünü Harita Konumu"
+          src="https://www.google.com/maps?q=Fatih,+Antalya+Blv.+Parkfuntastic+i%C3%A7i+No:410/62,+07070+Kepez/Antalya&output=embed"
+          class="w-full h-full border-0"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500">
+      <span>© 2026 Talya Orman Kır Düğünü — Kepez, Antalya. Tüm Hakları Saklıdır.</span>
+      <span>Parkfuntastic İçi No:410/62</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL (TAM EKRAN GALERİ) -->
+  <div id="lightboxModal" class="fixed inset-0 z-[60] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4">
+    <button type="button" onclick="closeLightbox()" aria-label="Kapat" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-2xl transition">
+      &times;
+    </button>
+
+    <button type="button" onclick="changeSlide(-1)" aria-label="Önceki" class="absolute left-3 sm:left-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl transition">
+      &#8249;
+    </button>
+
+    <div class="max-w-5xl w-full text-center">
+      <img id="lightboxImg" src="" alt="" class="max-h-[75vh] mx-auto rounded-2xl object-contain shadow-2xl" />
+      <h4 id="lightboxTitle" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-4"></h4>
+      <p id="lightboxDesc" class="text-xs sm:text-sm text-stone-300 mt-1"></p>
+    </div>
+
+    <button type="button" onclick="changeSlide(1)" aria-label="Sonraki" class="absolute right-3 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl transition">
+      &#8250;
+    </button>
+  </div>
+
+  <!-- MOBİL SABİT ALT BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-forest-950/95 backdrop-blur-md border-t border-white/15 p-2.5 grid grid-cols-2 gap-2.5">
+    <a href="tel:+905518832708" class="py-3 rounded-xl bg-white/10 border border-white/15 text-white text-center text-xs font-bold flex items-center justify-center gap-1.5">
+      <span>Hemen Ara</span>
+    </a>
+    <a href="#hesaplayici" class="py-3 rounded-xl bg-[#25D366] text-forest-950 text-center text-xs font-bold flex items-center justify-center gap-1.5">
+      <span>WhatsApp Teklif Al</span>
+    </a>
+  </div>
+
+  <script>
+    // 1. Tema Yönetimi (Açık / Koyu)
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('talya_theme') === 'dark') {
+      htmlEl.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('talya_theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // 2. Lightbox Galeri Verileri ve Kontrolleri
+    const galleryItems = [
+      {
+        src: 'https://i.dugun.com/gallery/77229/preview_orman-kir-dugunu_GfgDMbIb.jpg',
+        title: 'Çam Ağaçları Altında Kır Bahçesi',
+        desc: 'Kepez Parkfuntastic içerisinde, çam ağaçlarıyla çevrili 1.000 kişilik geniş kır düğünü ve davet alanımız.'
+      },
+      {
+        src: 'https://i.dugun.com/articles/body/orman-kir-dugunu-nk23cql1.jpg',
+        title: 'Peri Işıklı Nikah & Seremoni Alanı',
+        desc: 'Çiçekli nikah tagı, ahşap nikah masası ve akşam saatlerinde parlayan peri ışıklarıyla masalsı seremoni köşemiz.'
+      },
+      {
+        src: 'https://i.dugun.com/articles/body/orman-kir-dugunu-iee68klb.jpg',
+        title: 'Süs Havuzu & Orman Atmosferi',
+        desc: 'Turkuaz süs havuzu, beyaz çiçek sütunları ve orman dokusuyla hem tören hem de dış çekimler için eşsiz atmosfer.'
+      }
+    ];
+
+    let currentSlide = 0;
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+
+    function openLightbox(index) {
+      currentSlide = index;
+      updateLightbox();
+      lightboxModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function changeSlide(step) {
+      currentSlide = (currentSlide + step + galleryItems.length) % galleryItems.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const item = galleryItems[currentSlide];
+      lightboxImg.src = item.src;
+      lightboxTitle.textContent = item.title;
+      lightboxDesc.textContent = item.desc;
+    }
+
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightboxModal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+
+    // 3. İnteraktif Teklif Hesaplayıcı Mantığı
+    let selectedEvent = 'Kır Düğünü';
+    let selectedMenu = 'Kuru Pasta & Meşrubat';
+
+    const guestSlider = document.getElementById('guestSlider');
+    const guestValueDisplay = document.getElementById('guestValueDisplay');
+    const summaryGuests = document.getElementById('summaryGuests');
+    const summaryArea = document.getElementById('summaryArea');
+    const summaryEvent = document.getElementById('summaryEvent');
+    const summaryMenu = document.getElementById('summaryMenu');
+    const summaryDate = document.getElementById('summaryDate');
+    const weddingDateInput = document.getElementById('weddingDate');
+    const coupleNameInput = document.getElementById('coupleName');
+
+    // Davetli sürgüsü değişimi
+    guestSlider.addEventListener('input', () => {
+      const count = parseInt(guestSlider.value, 10);
+      guestValueDisplay.textContent = count;
+      summaryGuests.textContent = `${count} Kişi`;
+
+      if (count <= 250) {
+        summaryArea.textContent = 'Butik Orman Bahçesi & İskele';
+      } else if (count <= 600) {
+        summaryArea.textContent = 'Ana Orman Bahçesi & İskele';
+      } else {
+        summaryArea.textContent = 'Tam Kapasite Büyük Kır Alanı';
+      }
+    });
+
+    // Organizasyon türü butonları
+    document.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.option-btn').forEach(b => {
+          b.classList.remove('active', 'border-forest-700', 'bg-forest-700', 'text-white', 'dark:border-champagne-400', 'dark:bg-champagne-400', 'dark:text-forest-950');
+          b.classList.add('border-stone-200', 'dark:border-white/15');
+        });
+        btn.classList.add('active', 'border-forest-700', 'bg-forest-700', 'text-white', 'dark:border-champagne-400', 'dark:bg-champagne-400', 'dark:text-forest-950');
+        btn.classList.remove('border-stone-200', 'dark:border-white/15');
+        selectedEvent = btn.dataset.value;
+        summaryEvent.textContent = selectedEvent;
+      });
+    });
+
+    // Menü seçimi butonları
+    document.querySelectorAll('.menu-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.menu-btn').forEach(b => {
+          b.classList.remove('active', 'border-forest-700', 'bg-forest-50', 'dark:border-champagne-400', 'dark:bg-forest-800');
+          b.classList.add('border-stone-200', 'dark:border-white/15');
+        });
+        btn.classList.add('active', 'border-forest-700', 'bg-forest-50', 'dark:border-champagne-400', 'dark:bg-forest-800');
+        btn.classList.remove('border-stone-200', 'dark:border-white/15');
+        selectedMenu = btn.dataset.value;
+        summaryMenu.textContent = selectedMenu;
+      });
+    });
+
+    // Tarih girişini canlı özete yansıt
+    weddingDateInput.addEventListener('input', () => {
+      const val = weddingDateInput.value.trim();
+      summaryDate.textContent = val ? val : 'Belirtilmedi';
+    });
+
+    // WhatsApp Mesajı Oluştur ve Gönder
+    document.getElementById('sendWhatsappBtn').addEventListener('click', () => {
+      const couple = coupleNameInput.value.trim() || 'Belirtilmedi';
+      const dateVal = weddingDateInput.value.trim() || 'Tarih henüz netleşmedi';
+      const guests = guestSlider.value;
+
+      const text = `Merhaba Talya Orman Kır Düğünü,\n\nWeb sitenizdeki teklif hesaplayıcı üzerinden ulaşıyorum:\n• İsim: ${couple}\n• Organizasyon: ${selectedEvent}\n• Davetli Sayısı: ${guests} Kişi\n• İkram Tercihi: ${selectedMenu}\n• Planlanan Tarih: ${dateVal}\n\nBu kriterlere göre müsaitlik ve paket fiyatlarınız hakkında bilgi alabilir miyim?`;
+      const phone = '905518832708';
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    });
+
+    // 4. Sık Sorulan Sorular Akordeon
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.parentElement;
+        const icon = trigger.querySelector('.faq-icon');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-icon').classList.remove('rotate-45');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          icon.classList.add('rotate-45');
+        }
+      });
+    });
+
+    // 5. Kaydırma Animasyonu (IntersectionObserver)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
